@@ -16,7 +16,7 @@ class BlackjackUser extends Component {
   render() {
     return (
       <>
-      
+      <p>User Cards Go Here</p>
       
       </>
     )

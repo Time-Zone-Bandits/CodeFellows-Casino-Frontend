@@ -17,8 +17,7 @@ class BlackjackDealer extends Component {
   render() {
     return (
       <>
-      
-      
+      <p>Dealer Cards Go Here</p>
       </>
     )
   }

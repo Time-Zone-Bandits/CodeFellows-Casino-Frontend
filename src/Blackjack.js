@@ -15,9 +15,9 @@ class Blackjack extends Component {
   render() {
     return (
       <>
-      <BlackjackForm/>
       <BlackjackDealer/>
       <BlackjackUser />
+      <BlackjackForm/>
       </>
     )
   }

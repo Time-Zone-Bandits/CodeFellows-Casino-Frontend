@@ -5,6 +5,7 @@ import axios from 'axios';
 import LoginLogout from './components/LoginLogout';
 import Blackjack from './Blackjack';
 
+const url = process.env.REACT_APP_SERVER;
 
 class App extends Component {
   constructor(props){
@@ -25,8 +26,12 @@ class App extends Component {
 
   componentDidUpdate = async(prevState) => {
     this.updateAuthHeader();
+    if (this.props.auth0.isAuthenticated) {
+      let userPost = await axios.post(url + `/user`);
+      console.log(userPost);
+    }
   }
-  
+
   render(){
     return (
       <div className="App">
