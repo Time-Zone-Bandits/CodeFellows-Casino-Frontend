@@ -1,22 +1,23 @@
 import {Component} from 'react';
-import BlackjackForm from './Blackjack/BlackjackForm';
+import BlackjackForm from './components/Blackjack/BlackjackForm';
+import BlackjackDealer from './components/Blackjack/BlackjackDealer';
+import BlackjackUser from './components/Blackjack/BlackjackUser';
 
 
 
 class Blackjack extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      hand: [],
     }
-  }
+  
 
 
   render() {
     return (
       <>
+      <BlackjackDealer/>
+      <BlackjackUser />
       <BlackjackForm/>
-      
       </>
     )
   }

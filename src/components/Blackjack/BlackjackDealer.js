@@ -4,11 +4,12 @@ import axios from 'axios';
 
 
 
-class BlackjackUser extends Component {
+class BlackjackDealer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       hand: [],
+      showHand: false,
     }
   }
 
@@ -16,13 +17,11 @@ class BlackjackUser extends Component {
   render() {
     return (
       <>
-      
-      
+      <p>Dealer Cards Go Here</p>
       </>
     )
   }
 
-
 }
 
-export default BlackjackUser;
+export default BlackjackDealer;
