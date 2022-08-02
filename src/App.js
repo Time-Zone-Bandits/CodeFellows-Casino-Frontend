@@ -3,17 +3,13 @@ import { Component } from 'react';
 import { withAuth0 } from '@auth0/auth0-react'
 import axios from 'axios';
 import LoginLogout from './components/LoginLogout';
+import Blackjack from './Blackjack';
+
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {name: '', email: ''};
-  }
-  
-  //we already have the name and meail from withAuth, but this verifies the server is getting it!
-  getUser = async () => {
-    let response = await axios.get(process.env.REACT_APP_SERVER+'/test');
-    this.setState({name: response.data.name, email: response.data.email});
   }
 
   async updateAuthHeader(){
@@ -34,10 +30,8 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-          <LoginLogout />
-          <button onClick={this.getUser}>Get User</button>
-          <p>{this.state.name}</p>
-          <p>{this.state.email}</p>
+          <LoginLogout />  
+          {this.props.auth0.isAuthenticated ? <Blackjack /> : '    Please login to play'}
       </div>
     );
   }
