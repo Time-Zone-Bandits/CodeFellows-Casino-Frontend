@@ -1,10 +1,9 @@
-// 'use strict';
 import {Component} from 'react';
-import axios from 'axios';
+import BlackjackForm from './Blackjack/BlackjackForm';
 
 
 
-class BlackjackUser extends Component {
+class Blackjack extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +15,7 @@ class BlackjackUser extends Component {
   render() {
     return (
       <>
-      
+      <BlackjackForm/>
       
       </>
     )
@@ -25,4 +24,4 @@ class BlackjackUser extends Component {
 
 }
 
-export default BlackjackUser;
+export default Blackjack;
