@@ -1,7 +1,7 @@
 import {Component} from 'react';
-import BlackjackForm from './Blackjack/BlackjackForm';
-import BlackjackDealer from './Blackjack/BlackjackDealer';
-import BlackjackUser from './Blackjack/BlackjackUser';
+import BlackjackForm from './components/Blackjack/BlackjackForm';
+import BlackjackDealer from './components/Blackjack/BlackjackDealer';
+import BlackjackUser from './components/Blackjack/BlackjackUser';
 
 
 

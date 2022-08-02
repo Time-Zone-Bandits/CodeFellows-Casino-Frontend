@@ -45,11 +45,15 @@ class BlackjackForm extends Component {
     this.setState({betInput});
   }
 
+  componentWillMount() {
+    this.newGame();
+  }
+
   render() {
     return (
 
         <Form>
-          <Button>New Game</Button>
+          <Button onClick={() => {this.newGame()}}>New Game</Button>
           <Button>Hit</Button>
           <Button>Stand</Button>
           <Form.Label>Wallet: ${this.state.wallet}</Form.Label>
