@@ -8,8 +8,8 @@ function LoginLogout() {
     console.log(isAuthenticated, error);
 
     return !isAuthenticated 
-    ? <button onClick={loginWithRedirect}>Login</button>
-    : <button onClick={logout}>Logout</button>
+    ? <button onClick={loginWithRedirect}>Login</button> 
+    : <button onClick={logout}>Logout</button> 
 }
 
 export default LoginLogout;

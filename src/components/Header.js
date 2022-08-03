@@ -12,9 +12,9 @@ class Header extends Component {
         <Container>
           <Navbar.Brand id="brand">Welcome to Code Fellows Casino!</Navbar.Brand>
           <Nav className="header-nav">
-            <Nav.Link href="/App">Home</Nav.Link>
-            <Nav.Link href="/Profile">Profile</Nav.Link>
-            <Nav.Link href="/About">About Us</Nav.Link>
+            <Link to="/Blackjack">Home</Link>
+            <Link to="/Profile">Profile</Link>
+            <Link to="/About">About Us</Link>
             <Nav.Link >{<LoginLogout/>}</Nav.Link>
           </Nav>
           

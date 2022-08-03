@@ -9,12 +9,20 @@ class BlackjackForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wallet: 100,
+      wallet: 0,
       betInput: '',
       currentBet: null,
       gameOver: false
     }
   }
+
+ getUser = async () => {
+  const url = this.props.url + '/user';
+  const result = await this.props.axios.put(url);
+  this.setState({
+    wallet: result.data.chips
+  })
+ }
 
   newGame() {
     this.setState({
