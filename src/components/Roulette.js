@@ -86,7 +86,7 @@ class Roulette extends Component {
                 <Button onClick={this.handleSpinClick}> SPIN - Place Bets First</Button>
                 <Row sm={2} md={3} lg={4} xl={5}>
                     {Object.keys(this.state.board).map(k => 
-                        <Button key={k} onClick={e => this.addBet(k)} style={{width: "10rem", margin: "1rem"}}>{k}, Bet: {this.state.board[k]}</Button>
+                        <Button key={k} onClick={e => this.addBet(k)} style={{width: "10rem", margin: ".5rem"}}>{k}, Bet: {this.state.board[k]}</Button>
                     )}
                 </Row>
             </Container>

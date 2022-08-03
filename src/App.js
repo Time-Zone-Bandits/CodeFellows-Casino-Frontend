@@ -63,11 +63,9 @@ class App extends Component {
               <Route path="/About" element={<About/>} />
             </Routes>
           </div>
-          <div id="footer-div">
           <Footer />
-          </div>
-        </Router>
-      </>
+        </Router>        
+        </>
     );
   }
 }
