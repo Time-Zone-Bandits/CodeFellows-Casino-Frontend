@@ -1,5 +1,6 @@
 import {Component} from 'react';
 import { withAuth0 } from '@auth0/auth0-react';
+import {ListGroup} from 'react-bootstrap';
 
 class Profile extends Component {
   constructor(props){
@@ -28,11 +29,11 @@ class Profile extends Component {
 
   render() {
     return (
-      <>
-      <p>User Name: {this.state.name}</p>
-      <p>User Email: {this.state.email}</p>
-      <p>Chips: {this.state.chips}</p>
-      </>
+      <ListGroup>
+        <ListGroup.Item><h4>Player Name:</h4> {this.state.name}</ListGroup.Item>
+        <ListGroup.Item><h4>Email:</h4> {this.state.email}</ListGroup.Item>
+        <ListGroup.Item><h4>Wallet:</h4> ${this.state.chips}</ListGroup.Item>
+      </ListGroup>
     )
   }
 
