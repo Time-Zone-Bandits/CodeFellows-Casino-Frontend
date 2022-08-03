@@ -6,12 +6,7 @@ import BlackjackUser from './components/Blackjack/BlackjackUser';
 
 
 class Blackjack extends Component {
-  constructor(props) {
-    super(props);
-    }
-  
-
-
+ 
   render() {
     return (
       <>
