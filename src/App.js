@@ -2,8 +2,11 @@ import './App.css';
 import { Component } from 'react';
 import { withAuth0 } from '@auth0/auth0-react'
 import axios from 'axios';
-import LoginLogout from './components/LoginLogout';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Blackjack from './Blackjack';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 const url = process.env.REACT_APP_SERVER;
 
@@ -34,10 +37,14 @@ class App extends Component {
 
   render(){
     return (
-      <div className="App">
-          <LoginLogout />  
-          {this.props.auth0.isAuthenticated ? <Blackjack /> : '    Please login to play'}
-      </div>
+      <>
+        <Header />
+        <div className="App">
+            
+            {this.props.auth0.isAuthenticated ? <Blackjack /> : '    Please login to play'}
+        </div>
+        <Footer />
+      </>
     );
   }
 }

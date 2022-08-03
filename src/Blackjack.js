@@ -11,6 +11,7 @@ class Blackjack extends Component {
     return (
       <>
       <BlackjackDealer/>
+      <div id="spacer"></div>
       <BlackjackUser />
       <BlackjackForm/>
       </>
