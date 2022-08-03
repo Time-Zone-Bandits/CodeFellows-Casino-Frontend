@@ -2,6 +2,7 @@ import {Component} from 'react';
 import {Navbar, Nav} from 'react-bootstrap';
 import {Container} from 'react-bootstrap';
 import LoginLogout from './LoginLogout';
+import {Link} from 'react-router-dom';
 
 class Header extends Component {
 
@@ -11,9 +12,9 @@ class Header extends Component {
         <Container>
           <Navbar.Brand id="brand">Welcome to Code Fellows Casino!</Navbar.Brand>
           <Nav className="header-nav">
-            <Nav.Link >Home</Nav.Link>
-            <Nav.Link>Profile</Nav.Link>
-            <Nav.Link>About Us</Nav.Link>
+            <Link to="/Blackjack">Home</Link>
+            <Link to="/Profile">Profile</Link>
+            <Link to="/About">About Us</Link>
             <Nav.Link >{<LoginLogout/>}</Nav.Link>
           </Nav>
           

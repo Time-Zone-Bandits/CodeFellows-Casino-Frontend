@@ -4,9 +4,19 @@ import { withAuth0 } from '@auth0/auth0-react'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Blackjack from './Blackjack';
+import Blackjack from './components/Blackjack';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import About from './About';
+import Profile from './components/Profile';
+import PleaseLogin from './components/PleaseLogin';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 
 const url = process.env.REACT_APP_SERVER;
 
@@ -29,23 +39,33 @@ class App extends Component {
 
   componentDidUpdate = async(prevState) => {
     this.updateAuthHeader();
-    if (this.props.auth0.isAuthenticated) {
-      let userPost = await axios.post(url + `/user`);
-      console.log(userPost);
-    }
   }
 
   render(){
     return (
       <>
+       
+      <Router>
         <Header />
-        <div className="App">
-            
-            {this.props.auth0.isAuthenticated ? <Blackjack /> : '    Please login to play'}
-        </div>
-        <div id="footer-div">
-        <Footer />
-        </div>
+        
+          <div className="App">  
+            <Routes>
+              <Route path="/" element={<Profile/>}/>
+              {this.props.auth0.isAuthenticated ? 
+              <Route path="/Blackjack" element={<Blackjack axios={axios} url={url}/>} /> 
+              : <Route path="/Blackjack" element={<PleaseLogin/>}/>}
+
+              {this.props.auth0.isAuthenticated ? 
+              <Route path="/Profile" element={<Profile axios={axios} url={url}/>} /> 
+              : <Route path="/Profile" element={<PleaseLogin/>}/>}
+              
+              <Route path="/About" element={<About/>} />
+            </Routes>
+          </div>
+          <div id="footer-div">
+          <Footer />
+          </div>
+        </Router>
       </>
     );
   }
