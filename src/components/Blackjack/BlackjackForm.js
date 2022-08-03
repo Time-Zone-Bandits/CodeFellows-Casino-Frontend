@@ -51,7 +51,6 @@ class BlackjackForm extends Component {
 
   render() {
     return (
-
         <Form>
           <Button variant="secondary"onClick={() => {this.newGame()}}>New Game</Button>
           <Button variant="success">Hit</Button>
@@ -60,7 +59,6 @@ class BlackjackForm extends Component {
           <Form.Control type="number" name="bet" placeholder="Bet Amount" value={this.state.betInput} onChange={this.handleChange.bind(this)}/>
           <Button onClick={() => {this.placeBet()}}>Place Bet</Button>
         </Form>
-      
     )
   }
 }
