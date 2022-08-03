@@ -18,11 +18,11 @@ class BlackjackDealer extends Component {
   render() {
     return (
       <>
-      <img src={ph} title="placeholder" alt="placeholder"/>
-      <img src={ph} title="placeholder" alt="placeholder"/>
-      <img src={ph} title="placeholder" alt="placeholder"/>
-      <img src={ph} title="placeholder" alt="placeholder"/>
-      <img src={ph} title="placeholder" alt="placeholder"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
       </>
     )
   }

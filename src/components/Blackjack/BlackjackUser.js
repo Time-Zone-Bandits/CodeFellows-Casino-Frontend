@@ -17,11 +17,11 @@ class BlackjackUser extends Component {
     return (
       <>
       
-      <img src={ph} title="placeholder" alt="placeholder"/>
-      <img src={ph} title="placeholder" alt="placeholder"/>
-      <img src={ph} title="placeholder" alt="placeholder"/>
-      <img src={ph} title="placeholder" alt="placeholder"/>
-      <img src={ph} title="placeholder" alt="placeholder"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
       
       </>
     )

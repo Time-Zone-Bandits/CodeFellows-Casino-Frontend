@@ -4,7 +4,7 @@
 
 #footer {
   text-align: center;
-  margin: auto;
+  margin-top: 5rem;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -16,6 +16,7 @@
   
   margin-bottom: 2.5rem;
 }
+
 #brand {
   font-weight: bolder;
 }
@@ -27,4 +28,24 @@
 
 #spacer {
   height: 100px;
+}
+
+.ph-card{
+  margin-left: .75rem;
+}
+
+.btn-secondary, .btn-success, .btn-danger{
+margin-right: 1rem;
+margin-top: 2rem;
+}
+
+.btn-primary {
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.form-control {
+  margin: 2rem auto;
+  width: 10%;
+  text-align: center;
 }
