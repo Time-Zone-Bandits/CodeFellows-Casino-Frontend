@@ -59,7 +59,7 @@ class App extends Component {
               {this.props.auth0.isAuthenticated ? 
               <Route path="/Profile" element={<Profile axios={axios} url={url}/>} /> 
               : <Route path="/Profile" element={<PleaseLogin/>}/>}
-              <Route path="/Roulette" element={<Roulette/>}/>
+              <Route path="/Roulette" element={<Roulette axios={axios} url={url}/>}/>
               <Route path="/About" element={<About/>} />
             </Routes>
           </div>
