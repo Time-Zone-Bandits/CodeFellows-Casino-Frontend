@@ -5,7 +5,7 @@ class Footer extends Component {
   render() {
     return (
 
-      <p id="footer">Copyright &copy; Time Zone Bandits 2022</p>
+      <h6>Copyright &copy; Time Zone Bandits 2022</h6>
 
     )
   }

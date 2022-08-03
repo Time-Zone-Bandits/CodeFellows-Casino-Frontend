@@ -43,7 +43,9 @@ class App extends Component {
             
             {this.props.auth0.isAuthenticated ? <Blackjack /> : '    Please login to play'}
         </div>
+        <div id="footer-div">
         <Footer />
+        </div>
       </>
     );
   }

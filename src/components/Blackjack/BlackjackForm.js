@@ -45,7 +45,7 @@ class BlackjackForm extends Component {
     this.setState({betInput});
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.newGame();
   }
 
