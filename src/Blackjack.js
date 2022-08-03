@@ -10,6 +10,7 @@ class Blackjack extends Component {
   render() {
     return (
       <>
+      <h1>Blackjack</h1>
       <BlackjackDealer/>
       <div id="spacer"></div>
       <BlackjackUser />
