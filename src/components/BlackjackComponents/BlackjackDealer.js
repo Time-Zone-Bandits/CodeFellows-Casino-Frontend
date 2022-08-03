@@ -16,11 +16,11 @@ class BlackjackDealer extends Component {
   render() {
     return (
       <>
-      <div id="card1"></div>
-      <div id="card2"></div>
-      <div id="card3"></div>
-      <div id="card4"></div>
-      <div id="card5"></div>
+      <div id="card-d1"></div>
+      <div id="card-d2"></div>
+      <div id="card-d3"></div>
+      <div id="card-d4"></div>
+      <div id="card-d5"></div>
       </>
     )
   }

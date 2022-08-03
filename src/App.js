@@ -10,6 +10,7 @@ import Header from './components/Header';
 import About from './About';
 import Profile from './components/Profile';
 import PleaseLogin from './components/PleaseLogin';
+import Roulette from './components/Roulette';
 
 import {
   BrowserRouter as Router,
@@ -58,15 +59,13 @@ class App extends Component {
               {this.props.auth0.isAuthenticated ? 
               <Route path="/Profile" element={<Profile axios={axios} url={url}/>} /> 
               : <Route path="/Profile" element={<PleaseLogin/>}/>}
-              
+              <Route path="/Roulette" element={<Roulette axios={axios} url={url}/>}/>
               <Route path="/About" element={<About/>} />
             </Routes>
           </div>
-          <div id="footer-div">
           <Footer />
-          </div>
-        </Router>
-      </>
+        </Router>        
+        </>
     );
   }
 }
