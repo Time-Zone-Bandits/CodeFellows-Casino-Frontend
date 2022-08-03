@@ -1,7 +1,7 @@
 // 'use strict';
 import {Component} from 'react';
-import axios from 'axios';
-
+//import axios from 'axios';
+import ph from './img/card-ph.gif';
 
 
 class BlackjackUser extends Component {
@@ -16,7 +16,12 @@ class BlackjackUser extends Component {
   render() {
     return (
       <>
-      <p>User Cards Go Here</p>
+      
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
+      <img src={ph} title="placeholder" alt="placeholder" className="ph-card"/>
       
       </>
     )
