@@ -2,16 +2,17 @@
   text-align: center;
 }
 
-#root {
-  height: 1000px;
+#root{
+  background-image: url("./img/chip-bg.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 135vh;
+  width:100%;
 }
 
-#footer {
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-}
+/* Header Component ================================================== */
 
 .nav-bar {
   text-align: center;
@@ -20,6 +21,7 @@
 
 #brand {
   font-weight: bolder;
+  font-size: 34px;
 }
 
 .link {
@@ -30,6 +32,23 @@
 #logout {
   margin-left: .5rem;
 }
+
+#login {
+  margin-left: .5rem;
+}
+
+/* Footer Component ================================================== */
+
+#footer {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: -300px;
+  color: rgb(224, 221, 221, 0.733);
+}
+
+/* Blackjack Component ================================================== */
 
 #spacer {
   height: 100px;
@@ -67,10 +86,57 @@ form .form-control {
   padding-bottom: 1rem;
 }
 
+/* Roulette Component ================================================== */
+
+.roulette-h2{
+  margin-top: 2rem;
+  color: white;
+}
+
+#roulette-game {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#roulette-buttons {
+  margin-left: 8rem;
+}
+
+#top-buttons {
+  height: 5rem;
+  margin-top: 2rem;
+}
+
+#wheel {
+margin-top: 7rem;
+margin-left: -5rem;
+margin-right: 5rem;
+}
+/* Profile Component ================================================== */
+
 .list-group{
-  margin: 5rem 40% 0;
+  margin: 5rem 30%;
   text-align: center;
 }
+
+.list-group-item {
+  background-color: aquamarine;
+}
+
+#transactions-container {
+  margin-top: 3rem;
+  background-color: rgba(43, 137, 73, 0.72);
+  padding-top: 2rem;
+  padding-left: 7rem;
+  display: flex;
+  justify-content: center;
+}
+
+#transaction-card {
+  margin-bottom: 2rem;
+}
+
+/* About Component ================================================== */
 
 .headshot{
   height: 100px;
@@ -79,9 +145,47 @@ form .form-control {
 }
 
 .accordion {
-  margin: 5rem 20%;
+  margin-top: 5rem;
+  width: 60%;
 }
 
 #about {
+  margin-top: 5rem;
+  margin-left: 20rem;
+  color:rgba(219, 29, 29, 0.733);
+  font-size: 34px;
+  text-align: left;
+}
+
+#about-card {
+  width: 20rem;
+  height: 20rem;
+  margin-left: 5rem;
+  margin-top: 5rem;
+}
+
+#about-title {
   margin-top: 2rem;
+}
+#about-body {
+  font-style: italic;
+}
+
+#about-content{
+  display: flex;
+  justify-content: center;
+}
+
+/* PleaseLogin Component ================================================= */
+
+#h4{
+  color:rgba(34, 123, 41, 0.82);
+  width: 24rem;
+  height: 24rem;
+  text-align: center;
+  margin:45% auto;
+  border: 9px dashed rgb(224, 221, 221, 0.733);
+  border-radius: 115%;
+  padding: 9rem 3.5rem;
+  background-color: rgba(224, 221, 221, 0.733);
 }

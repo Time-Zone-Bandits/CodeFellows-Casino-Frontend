@@ -72,23 +72,31 @@ class Roulette extends Component {
     render() {
         return (
             <Container>
-                <h1>Hello, {this.state.name}. You have {this.state.chips} chips remaining.</h1>
-                <h2>Winnings: {this.state.winnings}</h2>
-                {(this.state.wheelData) && <Wheel
-                    mustStartSpinning={this.state.mustSpin}
-                    prizeNumber={this.state.winningNumber}
-                    data={this.state.wheelData}
-                    onStopSpinning={() => {
-                        this.setState({mustSpin:false});
-                      }}
-                />}
-                <Button onClick={this.getUser}>Enter Yourself in Game</Button>
-                <Button onClick={this.handleSpinClick}> SPIN - Place Bets First</Button>
-                <Row sm={2} md={3} lg={4} xl={5}>
-                    {Object.keys(this.state.board).map(k => 
-                        <Button key={k} onClick={e => this.addBet(k)} style={{width: "10rem", margin: ".5rem"}}>{k}, Bet: {this.state.board[k]}</Button>
-                    )}
-                </Row>
+                <h2 className="roulette-h2">Hello, {this.state.name}. You have {this.state.chips} chips remaining.</h2>
+                <h2 className="roulette-h2">Winnings: {this.state.winnings}</h2>
+                <div id="roulette-game">
+                    <div id="wheel">
+                        {(this.state.wheelData) && <Wheel
+                            mustStartSpinning={this.state.mustSpin}
+                            prizeNumber={this.state.winningNumber}
+                            data={this.state.wheelData}
+                            onStopSpinning={() => {
+                                this.setState({mustSpin:false});
+                            }}
+                        />}
+                    </div>
+                    <div id="roulette-buttons">
+                        <div id="top-buttons">
+                        <Button onClick={this.getUser} style={{marginRight:"1rem"}}>Enter Yourself in Game</Button>
+                        <Button onClick={this.handleSpinClick}> SPIN - Place Bets First</Button>
+                        </div>
+                        <Row sm={2} md={3} lg={4} xl={5}>
+                            {Object.keys(this.state.board).map(k => 
+                                <Button key={k} onClick={e => this.addBet(k)} style={{width: "10rem", margin: ".5rem"}}>{k}, Bet: {this.state.board[k]}</Button>
+                            )}
+                        </Row>
+                    </div>
+                </div>
             </Container>
         )
     }
