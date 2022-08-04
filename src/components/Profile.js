@@ -14,7 +14,7 @@ class Profile extends Component {
 
   getUser = async () => {
     const url = this.props.url + '/user';
-    const result = await this.props.axios.put(url, {chips: 5000});
+    const result = await this.props.axios.put(url);
     console.log(result.data);
     this.setState({
       name: result.data.name,
