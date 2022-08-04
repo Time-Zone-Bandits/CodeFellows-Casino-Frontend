@@ -1,7 +1,8 @@
 // 'use strict';
 import {Component} from 'react';
 import {Accordion} from 'react-bootstrap';
-import {Card} from 'react-bootstrap'
+import {Card} from 'react-bootstrap';
+import {Alert} from 'react-bootstrap';
 import mandyPic from './img/mandy-pic.jpg';
 import joshPic from './img/josh-headshot.jpg';
 import ajPic from './img/aj-headshot.jpg';
@@ -14,7 +15,7 @@ class About extends Component {
   render() {
     return (
       <>
-      <h3 id="about">About Team Time Zone Bandits</h3>
+      <Alert variant="success"  id="about">About Team Time Zone Bandits</Alert>
       <div id="about-content">
         <Accordion alwaysOpen>
           <Accordion.Item eventKey="0" >

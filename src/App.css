@@ -90,12 +90,22 @@ form .form-control {
 
 .roulette-h2{
   margin-top: 2rem;
-  color: white;
+  width: 50%;
+  margin-left: 37rem;
+}
+
+.alert-warning{
+  font-weight: bold;
+}
+
+.alert-success{
+  font-weight: bold;
 }
 
 #roulette-game {
   display: flex;
   justify-content: flex-start;
+  
 }
 
 #roulette-buttons {
@@ -104,7 +114,6 @@ form .form-control {
 
 #top-buttons {
   height: 5rem;
-  margin-top: 2rem;
 }
 
 #wheel {
@@ -115,7 +124,7 @@ margin-right: 5rem;
 /* Profile Component ================================================== */
 
 .list-group{
-  margin: 5rem 30%;
+  margin: 2rem 30%;
   text-align: center;
 }
 
@@ -124,7 +133,7 @@ margin-right: 5rem;
 }
 
 #transactions-container {
-  margin-top: 3rem;
+  margin-top: 2rem;
   background-color: rgba(43, 137, 73, 0.72);
   padding-top: 2rem;
   padding-left: 7rem;
@@ -133,7 +142,8 @@ margin-right: 5rem;
 }
 
 #transaction-card {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
 }
 
 /* About Component ================================================== */
@@ -145,30 +155,35 @@ margin-right: 5rem;
 }
 
 .accordion {
-  margin-top: 5rem;
+  margin-top: 4rem;
   width: 60%;
 }
 
 #about {
-  margin-top: 5rem;
-  margin-left: 20rem;
-  color:rgba(219, 29, 29, 0.733);
-  font-size: 34px;
-  text-align: left;
+  display: block;
+  margin-top: 6rem;
+  margin-left: 10.2rem;
+  width: 32rem;
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgb(224, 221, 221, 0.733);
 }
 
 #about-card {
-  width: 20rem;
-  height: 20rem;
+  width: 22rem;
+  height: 27rem;
   margin-left: 5rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 #about-title {
   margin-top: 2rem;
+  font-size: 1.6rem;
 }
 #about-body {
   font-style: italic;
+  font-size: 1.2rem;
 }
 
 #about-content{
@@ -183,9 +198,11 @@ margin-right: 5rem;
   width: 24rem;
   height: 24rem;
   text-align: center;
-  margin:45% auto;
   border: 9px dashed rgb(224, 221, 221, 0.733);
   border-radius: 115%;
   padding: 9rem 3.5rem;
   background-color: rgba(224, 221, 221, 0.733);
+  margin-left: 40%;
+  margin-top: 10rem;
+  
 }
