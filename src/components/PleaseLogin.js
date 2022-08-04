@@ -5,7 +5,9 @@ class PleaseLogin extends Component {
 
   render() {
     return (
-      <h4>Please Login To Play and View Your Profile!</h4>
+      <div id="h4">
+        <h4>Please Login To Play and View Your Profile!</h4>
+      </div>
     )
   }
 }

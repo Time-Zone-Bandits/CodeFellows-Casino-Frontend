@@ -2,15 +2,21 @@
   text-align: center;
 }
 
-#root {
-  height: 1000px;
+#root{
+  background-image: url("./img/chip-bg.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  height: 135vh;
 }
+
 
 #footer {
   text-align: center;
   position: absolute;
   width: 100%;
   bottom: 0;
+  margin-bottom: -300px;
+  color: rgb(224, 221, 221, 0.733);
 }
 
 .nav-bar {
@@ -20,6 +26,7 @@
 
 #brand {
   font-weight: bolder;
+  font-size: 34px;
 }
 
 .link {
@@ -28,6 +35,10 @@
 }
 
 #logout {
+  margin-left: .5rem;
+}
+
+#login {
   margin-left: .5rem;
 }
 
@@ -68,7 +79,7 @@ form .form-control {
 }
 
 .list-group{
-  margin: 5rem 40% 0;
+  margin: 5rem 30%;
   text-align: center;
 }
 
@@ -84,4 +95,26 @@ form .form-control {
 
 #about {
   margin-top: 2rem;
+}
+
+#transactions-container {
+  margin-top: 3rem;
+  background-color: rgba(43, 137, 73, 0.72);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+h4{
+  color:rgba(34, 123, 41, 0.82);
+  width: 24rem;
+  height: 24rem;
+  text-align: center;
+  margin:45% auto;
+  border: 9px dashed rgb(224, 221, 221, 0.733);
+  border-radius: 115%;
+  padding: 9rem 3.5rem;
+  background-color: rgba(224, 221, 221, 0.733);
+}
+#h4{
+  margin-top: 10rem;
 }
