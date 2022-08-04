@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import { withAuth0 } from '@auth0/auth0-react'
 import { Wheel } from 'react-custom-roulette'
+import {Alert} from 'react-bootstrap';
 
 class Roulette extends Component {
     constructor(props){
@@ -66,14 +67,17 @@ class Roulette extends Component {
         console.log(result.data);
         let newWinningNumber = result.data.newWinningNumber;
         let winnings = (newChips - this.state.chips) + this.state.winnings;
-        this.setState({winningNumber: newWinningNumber, chips: newChips, winnings: winnings, board: this.makeBoard(), mustSpin: true})
-    }
+        this.setState({winningNumber: newWinningNumber, board: this.makeBoard(), mustSpin: true});
+        setTimeout((e) => {
+            this.setState({chips: newChips, winnings: winnings})}, 12000);
+        }
+    
 
     render() {
         return (
             <Container>
-                <h2 className="roulette-h2">Hello, {this.state.name}. You have {this.state.chips} chips remaining.</h2>
-                <h2 className="roulette-h2">Winnings: {this.state.winnings}</h2>
+                <Alert variant="warning" className="roulette-h2">Hello, {this.state.name}. You have {this.state.chips} chips remaining.</Alert>
+                <Alert variant="success" className="roulette-h2">Winnings: {this.state.winnings}</Alert>
                 <div id="roulette-game">
                     <div id="wheel">
                         {(this.state.wheelData) && <Wheel
