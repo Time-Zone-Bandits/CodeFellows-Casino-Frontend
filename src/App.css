@@ -124,7 +124,7 @@ margin-right: 5rem;
 /* Profile Component ================================================== */
 
 .list-group{
-  margin: 5rem 30%;
+  margin: 2rem 30%;
   text-align: center;
 }
 
@@ -133,7 +133,7 @@ margin-right: 5rem;
 }
 
 #transactions-container {
-  margin-top: 3rem;
+  margin-top: 2rem;
   background-color: rgba(43, 137, 73, 0.72);
   padding-top: 2rem;
   padding-left: 7rem;
@@ -142,7 +142,8 @@ margin-right: 5rem;
 }
 
 #transaction-card {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
 }
 
 /* About Component ================================================== */

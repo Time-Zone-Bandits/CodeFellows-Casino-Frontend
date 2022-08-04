@@ -6,7 +6,7 @@ class Transaction extends Component {
 
   render() {
     return (
-      <Card id="transaction-card" style={{width: '15rem'}}>
+      <Card id="transaction-card" style={{width: '12rem', height: '9rem'}}>
         <Card.Body>
           <Card.Title>{this.props.winnings} Chips</Card.Title>
           <Card.Subtitle>{this.props.game}</Card.Subtitle>

@@ -46,7 +46,7 @@ class Profile extends Component {
         <ListGroup.Item><h4>Wallet:</h4>{this.state.chips} Chips</ListGroup.Item>
       </ListGroup>
       <Container fluid id="transactions-container">
-        <Row sm={2} md={3} lg={4} xl={5}>
+        <Row sm={3} md={5} lg={6} xl={7}>
         {this.state.transactions.map (win =>
           <Col>
             <Transaction
