@@ -22,9 +22,13 @@
   font-weight: bolder;
 }
 
-.nav-link {
-  margin-right: 1.5rem;
-  
+.link {
+  margin-left: 1rem;
+  margin-top: .5rem;
+}
+
+#logout {
+  margin-left: .5rem;
 }
 
 #spacer {

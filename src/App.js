@@ -17,6 +17,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import LoginLogout from './components/LoginLogout';
 
 
 const url = process.env.REACT_APP_SERVER;
@@ -51,7 +52,10 @@ class App extends Component {
         
           <div className="App">  
             <Routes>
-              <Route path="/" element={<Profile/>}/>
+            {this.props.auth0.isAuthenticated ? 
+              <Route path="/" element={<Blackjack axios={axios} url={url}/>} /> 
+              : <Route path="/" element={<PleaseLogin/>}/>}
+
               {this.props.auth0.isAuthenticated ? 
               <Route path="/Blackjack" element={<Blackjack axios={axios} url={url}/>} /> 
               : <Route path="/Blackjack" element={<PleaseLogin/>}/>}
@@ -59,7 +63,11 @@ class App extends Component {
               {this.props.auth0.isAuthenticated ? 
               <Route path="/Profile" element={<Profile axios={axios} url={url}/>} /> 
               : <Route path="/Profile" element={<PleaseLogin/>}/>}
-              <Route path="/Roulette" element={<Roulette axios={axios} url={url}/>}/>
+
+              {this.props.auth0.isAuthenticated ? 
+              <Route path="/Roulette" element={<Roulette axios={axios} url={url}/>} /> 
+              : <Route path="/Roulette" element={<PleaseLogin/>}/>}
+              
               <Route path="/About" element={<About/>} />
             </Routes>
           </div>
