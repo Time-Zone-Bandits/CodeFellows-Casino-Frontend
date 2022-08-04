@@ -13,10 +13,10 @@ class Header extends Component {
           <Navbar.Brand id="brand">Welcome to Code Fellows Casino!</Navbar.Brand>
           <Nav className="header-nav">
 
-            <Link to="/Blackjack">Home</Link>
-            <Link to="/Roulette">Roulette</Link>
-            <Link to="/Profile">Profile</Link>
-            <Link to="/About">About Us</Link>
+            <Link to="/Blackjack" ><button className="link">Blackjack</button></Link>
+            <Link to="/Roulette" ><button className="link">Roulette</button></Link>
+            <Link to="/Profile" ><button className="link">Profile</button></Link>
+            <Link to="/About" ><button className="link">About Us</button></Link>
             <Nav.Link >{<LoginLogout/>}</Nav.Link>
           </Nav>
           
