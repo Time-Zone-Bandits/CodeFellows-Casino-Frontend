@@ -90,11 +90,36 @@ form .form-control {
 }
 
 .accordion {
-  margin: 5rem 20%;
+  margin-top: 5rem;
+  width: 60%;
 }
 
+
 #about {
+  margin-top: 5rem;
+  margin-left: 20rem;
+  color:rgba(219, 29, 29, 0.733);
+  font-size: 34px;
+  text-align: left;
+}
+
+#about-card {
+  width: 20rem;
+  height: 20rem;
+  margin-left: 5rem;
+  margin-top: 5rem;
+}
+
+#about-title {
   margin-top: 2rem;
+}
+#about-body {
+  font-style: italic;
+}
+
+#about-content{
+  display: flex;
+  justify-content: center;
 }
 
 #transactions-container {
@@ -104,7 +129,7 @@ form .form-control {
   padding-bottom: 2rem;
 }
 
-h4{
+#h4{
   color:rgba(34, 123, 41, 0.82);
   width: 24rem;
   height: 24rem;
@@ -115,6 +140,4 @@ h4{
   padding: 9rem 3.5rem;
   background-color: rgba(224, 221, 221, 0.733);
 }
-#h4{
-  margin-top: 10rem;
-}
+
