@@ -75,7 +75,7 @@ class HorseRace extends Component {
             />  
           )}
           <button type="submit" style={buttonStyle}> Play </button>
-          <button onClick={() => window.location.reload()} style={buttonStyle}>Reload</button>
+
           <Animate
               play={this.state.play}
               duration={Math.max(...this.state.horses) * 2}
