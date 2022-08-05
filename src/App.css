@@ -130,10 +130,51 @@ margin-right: 5rem;
   background-image: url(./img/grass.jpg);
   background-size:cover;
 }
+#horse0{
+  background-color: rgba(97, 9, 97, 0.402);
+}
+
+#horse1 {
+  background-color: rgba(39, 23, 103, 0.326);
+}
+
+#horse2 {
+  background-color: rgba(133, 99, 11, 0.326);
+}
+
+#horse3 {
+  background-color: rgba(188, 55, 55, 0.326);
+}
+
+#radio0 {
+  background-color: rgba(190, 24, 190, 0.884);
+  color: white;
+}
+
+#radio1 {
+  background-color: rgba(38, 55, 163, 0.884);
+  color: white;
+}
+
+#radio2 {
+  background-color: rgb(159, 167, 56);
+  color: white;
+}
+
+#radio3 {
+  background-color: rgba(196, 38, 38, 0.842);
+  color: white;
+}
 
 #horse-form {
   padding: 1rem;
-  background-color: aqua;
+  background-color: rgb(86, 161, 161);
+  border: 1px solid rgb(68, 135, 135);
+  border-radius: 10%;
+}
+
+#horse-win {
+  color: navy;
 }
 
 /* Profile Component ================================================== */

@@ -51,6 +51,7 @@ class HorseRace extends Component {
       <>
         <div id="horse-path">
         {this.state.horses.map((t, i) => 
+          <div id={'horse'+i}>
             <Animate
               key={i.toString()}
               play={this.state.play}
@@ -61,10 +62,12 @@ class HorseRace extends Component {
               >
               <img alt='horse icon' src={horseIcon} style={imgStyle} />
             </Animate>
+          </div>
         )}
         </div>
         <Form id="horse-form" onSubmit={this.handleRaceStart}>
           {this.state.horses.map((h, i) =>
+            <div id={'radio'+i}>
             <Form.Check
               key={h.toString()}
               inline
@@ -73,6 +76,7 @@ class HorseRace extends Component {
               type="radio"
               id={`checkbox-${i + 1}`}
             />  
+            </div>
           )}
           <button type="submit" style={buttonStyle}> Play </button>
           <button onClick={() => window.location.reload()} style={buttonStyle}>Reload</button>
@@ -81,9 +85,9 @@ class HorseRace extends Component {
               duration={Math.max(...this.state.horses) * 2}
               delay={0.2}
               start={{opacity: "0"}}
-              end={{ transform: "1" }}
+              end={{ transform: "1" }} 
               >
-              <h1>{this.state.winStatus ? 'You Won 60 Chips' : 'You Lost 20 Chips'}</h1>
+              <h2 id="horse-win"> {this.state.winStatus ? 'You Won 60 Chips' : 'You Lost 20 Chips'}</h2>
             </Animate>
         </Form>
       </>
