@@ -122,8 +122,8 @@ class Blackjack extends Component {
     } else {
       return (
         <section>
-          <h1>Game Status: {this.state.winStatus}</h1>
-          <h2>Winnings: {this.state.winnings}</h2>
+          <Alert id="bj-status" variant="warning">Game Status: {this.state.winStatus}</Alert>
+          <Alert id="bj-winnings" variant="success">Winnings: {this.state.winnings}</Alert>
         </section>
       )
     }
@@ -133,20 +133,23 @@ class Blackjack extends Component {
     return (
       <div id='blackjackbody'>
       <section>
-        <h1>Dealer: {!this.state.gameInProgress ? this.state.dealerScore : ''}</h1>
+
+        <h3>Dealer: {!this.state.gameInProgress ? this.state.dealerScore : ''}</h3>
         {!this.state.gameInProgress ? this.state.dealerHand.map((card, idx) => 
           <img key={idx.toString()} alt='card' src={card.image} />
-          ) : <img alt='card' src={this.state.dealerHand[0].image} />}
+          ) : <img className={'bj-card'} alt='card' src={this.state.dealerHand[0].image} />}
+
       </section>
       <section>
-        <h1>Player: {this.state.userScore}</h1>
+      
+        <h3>Player: {this.state.userScore}</h3>
         {this.state.userHand.map((card, idx) => 
-          <img key={idx.toString()} alt='card' src={card.image} />
+          <img className={'bj-card'} key={idx.toString()} alt='card' src={card.image} />
           )}
+          
       </section>
       {this.displayWinnings()}
-
-      <Form.Control type='input' placeholder="Bet Amount" onChange={this.handleBetFieldChange} />
+      <Form.Control id="bj-input" type='input' placeholder="Bet Amount" onChange={this.handleBetFieldChange} />
       <Alert show={this.state.showAlert} variant="danger" onClose={() => this.setState({showAlert: false})} dismissible>
         <Alert.Heading>
             Not Enough Funds
@@ -156,7 +159,6 @@ class Blackjack extends Component {
       <Button onClick={this.blackjackPost} disabled={this.state.gameInProgress}>New Game</Button>
       <Button onClick={this.blackjackPutHit} disabled={!this.state.gameInProgress}>Hit</Button>
       <Button onClick={this.blackjackPutStand} disabled={!this.state.gameInProgress}>Stand</Button>
-
       </ div>
     )
   }
