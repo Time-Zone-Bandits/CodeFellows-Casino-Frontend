@@ -11,25 +11,74 @@ class Blackjack extends Component {
     this.state = {
       gameInProgress: false,
       betField: 0,
-      showAlert: false
+      showAlert: false,
+      userHand: [],
+      dealerHand: [],
+      userScore: 0,
+      dealerScore: 0,
+      winStatus: "",
+      winnings: 0
     };
   }
 
   blackjackPost = async (e) => {
     const url = this.props.url+'/blackjack';
     console.log(url);
-    const response = await this.props.axios.post(url,{bet: 100});
+    const response = await this.props.axios.post(url,{bet: this.state.betField});
     console.log(response.data);
+
+    let dealerHand = response.data.dealersCards
+    let userHand = response.data.playersCards
+    let userScore = response.data.playerScore
+    let dealerScore = response.data.dealerScore
+    let winStatus = response.data.winStatus
+    let winnings = response.data.winnings
+
+    this.setState({
+      userHand:userHand,
+      dealerHand: dealerHand,
+      userScore: userScore,
+      dealerScore: dealerScore,
+      winStatus: winStatus,
+      gameInProgress: true,
+      winnings: winnings
+    })
+
+    if(winStatus !== 'no winner') {
+      this.setState({gameInProgress: false})
+    }
   };
 
   componentDidUpdate(){
     console.log(this.state.betField);
   }
+
   blackjackPutHit = async (e) => {
     const url = this.props.url+'/blackjack';
     console.log(url);
     const response = await this.props.axios.put(url, {choice: 'hit'});
     console.log(response.data);
+
+    let dealerHand = response.data.dealersCards
+    let userHand = response.data.playersCards
+    let userScore = response.data.playerScore
+    let dealerScore = response.data.dealerScore
+    let winStatus = response.data.winStatus
+    let winnings = response.data.winnings
+
+    this.setState({
+      userHand:userHand,
+      dealerHand: dealerHand,
+      userScore: userScore,
+      dealerScore: dealerScore,
+      winStatus: winStatus,
+      gameInProgress: true,
+      winnings: winnings
+    })
+
+    if(winStatus !== 'no winner') {
+      this.setState({gameInProgress: false})
+    }
   }
 
   blackjackPutStand = async (e) => {
@@ -37,37 +86,48 @@ class Blackjack extends Component {
     console.log(url);
     const response = await this.props.axios.put(url, {choice: 'stand'});
     console.log(response.data);
+
+    let dealerHand = response.data.dealersCards
+    let userHand = response.data.playersCards
+    let userScore = response.data.playerScore
+    let dealerScore = response.data.dealerScore
+    let winStatus = response.data.winStatus
+    let winnings = response.data.winnings
+
+    this.setState({
+      userHand:userHand,
+      dealerHand: dealerHand,
+      userScore: userScore,
+      dealerScore: dealerScore,
+      winStatus: winStatus,
+      gameInProgress: false,
+      winnings: winnings
+    })
   }
 
   handleBetFieldChange = (e) => {
     this.setState({betField: parseInt(e.target.value)});
   }
 
-  handleNewGame = (e) => {
-
-  }
-
-  handleHit = (e) => {
-
-  }
-
-  handleStand = (e) => {
-
-  }
-
   render() {
     return (
-      <>
+      <div id='blackjackbody'>
       <section>
-        <h1>Dealer Cards</h1>
-        
+        <h1>Dealer: {this.state.dealerScore}</h1>
+        {this.state.dealerHand.map((card, idx) => 
+          <img key={idx.toString()} alt='card' src={card.image} />
+          )}
       </section>
       <section>
-        <h1>PLayer Cards</h1>
+        <h1>Player: {this.state.userScore}</h1>
+        {this.state.userHand.map((card, idx) => 
+          <img key={idx.toString()} alt='card' src={card.image} />
+          )}
       </section>
-      <button onClick={this.blackjackPost}>test blackjack post</button>
-      <button onClick={this.blackjackPutHit}>test blackjack put 'hit'</button>
-      <button onClick={this.blackjackPutStand}>test blackjack put 'stand'</button>
+      <section>
+        <h1>Game Status: {this.state.winStatus}</h1>
+        <h2>Winnings: {this.state.winnings}</h2>
+      </section>
 
       <Form.Control type='input' placeholder="Bet Amount" onChange={this.handleBetFieldChange}/>
       <Alert show={this.state.showAlert} variant="danger" onClose={() => this.setState({showAlert: false})} dismissible>
@@ -76,11 +136,11 @@ class Blackjack extends Component {
         </Alert.Heading>
         Please See Cashier
       </Alert>      
-      <Button disabled={this.state.gameInProgress}>New Game</Button>
-      <Button disabled={!this.state.gameInProgress}>Hit</Button>
-      <Button disabled={!this.state.gameInProgress}>Stand</Button>
+      <Button onClick={this.blackjackPost} disabled={this.state.gameInProgress}>New Game</Button>
+      <Button onClick={this.blackjackPutHit} disabled={!this.state.gameInProgress}>Hit</Button>
+      <Button onClick={this.blackjackPutStand} disabled={!this.state.gameInProgress}>Stand</Button>
 
-      </>
+      </ div>
     )
   }
 
