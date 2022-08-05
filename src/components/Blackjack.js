@@ -136,7 +136,7 @@ class Blackjack extends Component {
 
         <h3>Dealer: {!this.state.gameInProgress ? this.state.dealerScore : ''}</h3>
         {!this.state.gameInProgress ? this.state.dealerHand.map((card, idx) => 
-          <img key={idx.toString()} alt='card' src={card.image} />
+          <img className={'bj-card'} key={idx.toString()} alt='card' src={card.image} />
           ) : <img className={'bj-card'} alt='card' src={this.state.dealerHand[0].image} />}
 
       </section>
