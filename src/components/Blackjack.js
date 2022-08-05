@@ -105,18 +105,38 @@ class Blackjack extends Component {
     })
   }
 
-  handleBetFieldChange = (e) => {
-    this.setState({betField: parseInt(e.target.value)});
+  handleBetFieldChange = async (e) => {
+    const value = parseInt(e.target.value);
+    const result = await this.props.axios.put(this.props.url+'/user');
+    if (result.data.chips < value){
+      this.setState({showAlert: true})
+    }
+    this.setState({betField: value});
+  }
+
+  displayWinnings = () => {
+    if (this.state.gameInProgress){
+      return (
+        <section></section>
+      )
+    } else {
+      return (
+        <section>
+          <h1>Game Status: {this.state.winStatus}</h1>
+          <h2>Winnings: {this.state.winnings}</h2>
+        </section>
+      )
+    }
   }
 
   render() {
     return (
       <div id='blackjackbody'>
       <section>
-        <h1>Dealer: {this.state.dealerScore}</h1>
-        {this.state.dealerHand.map((card, idx) => 
+        <h1>Dealer: {!this.state.gameInProgress ? this.state.dealerScore : ''}</h1>
+        {!this.state.gameInProgress ? this.state.dealerHand.map((card, idx) => 
           <img key={idx.toString()} alt='card' src={card.image} />
-          )}
+          ) : <img alt='card' src={this.state.dealerHand[0].image} />}
       </section>
       <section>
         <h1>Player: {this.state.userScore}</h1>
@@ -124,12 +144,9 @@ class Blackjack extends Component {
           <img key={idx.toString()} alt='card' src={card.image} />
           )}
       </section>
-      <section>
-        <h1>Game Status: {this.state.winStatus}</h1>
-        <h2>Winnings: {this.state.winnings}</h2>
-      </section>
+      {this.displayWinnings()}
 
-      <Form.Control type='input' placeholder="Bet Amount" onChange={this.handleBetFieldChange}/>
+      <Form.Control type='input' placeholder="Bet Amount" onChange={this.handleBetFieldChange} />
       <Alert show={this.state.showAlert} variant="danger" onClose={() => this.setState({showAlert: false})} dismissible>
         <Alert.Heading>
             Not Enough Funds
