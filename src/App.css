@@ -147,7 +147,7 @@ margin-right: 5rem;
 }
 
 #radio0 {
-  background-color: rgba(190, 24, 190, 0.884);
+  background-color: rgba(133, 10, 133, 0.884);
   color: white;
 }
 
@@ -157,7 +157,7 @@ margin-right: 5rem;
 }
 
 #radio2 {
-  background-color: rgb(159, 167, 56);
+  background-color: rgb(192, 192, 26);
   color: white;
 }
 
@@ -168,13 +168,17 @@ margin-right: 5rem;
 
 #horse-form {
   padding: 1rem;
-  background-color: rgb(86, 161, 161);
-  border: 1px solid rgb(68, 135, 135);
+  background-color: rgba(0, 0, 0, 0.404);
+  border: 3px solid rgba(0, 0, 0, 0.411);
   border-radius: 10%;
 }
 
+#horse-play-btn {
+  margin:auto;
+}
+
 #horse-win {
-  color: navy;
+  color: white;
 }
 
 /* Profile Component ================================================== */
