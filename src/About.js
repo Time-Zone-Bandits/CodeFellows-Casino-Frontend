@@ -33,13 +33,7 @@ class About extends Component {
               <h2>Anthony Johnson</h2>
             </Accordion.Header>
             <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Anthony is a veteran, former LEO, business owner, manager and salesman. He has held a myriad of jobs, which means a myriad of talents! He loves the idea that he is going to work in an industry that values the pursuit of process improvement instead of focusing on "tradition" or the infamous line "this is how we've always done it". 
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2">
