@@ -49,6 +49,7 @@ class HorseRace extends Component {
   render() {
     return (
       <>
+        <div id="horse-path">
         {this.state.horses.map((t, i) => 
             <Animate
               key={i.toString()}
@@ -61,8 +62,8 @@ class HorseRace extends Component {
               <img alt='horse icon' src={horseIcon} style={imgStyle} />
             </Animate>
         )}
-
-        <Form onSubmit={this.handleRaceStart}>
+        </div>
+        <Form id="horse-form" onSubmit={this.handleRaceStart}>
           {this.state.horses.map((h, i) =>
             <Form.Check
               key={h.toString()}
