@@ -41,9 +41,15 @@ class HorseRace extends Component {
     }
     if(this.state.winStatus === null){
       let response = await this.props.axios.post(this.props.url+'/horserace', {winner: winnerChoice});
-      console.log(response.data.winStatus);
+      console.log(response.data);
       this.setState({horses: response.data.times, winStatus: response.data.winStatus, showWinner: true, play: true});
     }
+    setTimeout(() => {
+      this.setState({play: false, showWinner: false})
+    }, 6000)
+    setTimeout(() => {
+      this.setState({winStatus:null})
+    }, 12000)
   }
 
   render() {
@@ -78,14 +84,14 @@ class HorseRace extends Component {
             />  
             </div>
           )}
-          <button type="submit" style={buttonStyle}> Play </button>
+          <button id="horse-play-btn" type="submit" style={buttonStyle}> Play </button>
 
           <Animate
               play={this.state.play}
-              duration={Math.max(...this.state.horses) * 2}
-              delay={0.2}
+              duration={Math.max(...this.state.horses)}
+              delay={3}
               start={{opacity: "0"}}
-              end={{ transform: "1" }} 
+              end={{ opacity: "1" }} 
               >
               <h2 id="horse-win"> {this.state.winStatus ? 'You Won 60 Chips' : 'You Lost 20 Chips'}</h2>
             </Animate>
