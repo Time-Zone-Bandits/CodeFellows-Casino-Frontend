@@ -68,6 +68,7 @@ class Blackjack extends Component {
       <button onClick={this.blackjackPost}>test blackjack post</button>
       <button onClick={this.blackjackPutHit}>test blackjack put 'hit'</button>
       <button onClick={this.blackjackPutStand}>test blackjack put 'stand'</button>
+
       <Form.Control type='input' placeholder="Bet Amount" onChange={this.handleBetFieldChange}/>
       <Alert show={this.state.showAlert} variant="danger" onClose={() => this.setState({showAlert: false})} dismissible>
         <Alert.Heading>
