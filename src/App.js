@@ -33,15 +33,18 @@ class App extends Component {
     if (this.props.auth0.isAuthenticated) {
       const r = await this.props.auth0.getIdTokenClaims();
       axios.defaults.headers.common['Authorization'] = `Bearer ${r.__raw}`;
+      const userUrl = url + '/user';
+      const result = await axios.put(userUrl);
+      this.setState({name: result.data.name, email: result.data.email})
     }
   }
 
   componentDidMount = async () => {
-    this.updateAuthHeader();
+    await this.updateAuthHeader();
   }
 
   componentDidUpdate = async(prevState) => {
-    this.updateAuthHeader();
+    await this.updateAuthHeader();
   }
 
   render(){

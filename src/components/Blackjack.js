@@ -105,31 +105,51 @@ class Blackjack extends Component {
     })
   }
 
-  handleBetFieldChange = (e) => {
-    this.setState({betField: parseInt(e.target.value)});
+  handleBetFieldChange = async (e) => {
+    const value = parseInt(e.target.value);
+    const result = await this.props.axios.put(this.props.url+'/user');
+    if (result.data.chips < value){
+      this.setState({showAlert: true})
+    }
+    this.setState({betField: value});
+  }
+
+  displayWinnings = () => {
+    if (this.state.gameInProgress){
+      return (
+        <section></section>
+      )
+    } else {
+      return (
+        <section>
+          <Alert id="bj-status" variant="warning">Game Status: {this.state.winStatus}</Alert>
+          <Alert id="bj-winnings" variant="success">Winnings: {this.state.winnings}</Alert>
+        </section>
+      )
+    }
   }
 
   render() {
     return (
       <div id='blackjackbody'>
       <section>
-        <h3>Dealer: {this.state.dealerScore}</h3>
-        {this.state.dealerHand.map((card, idx) => 
-          <img className={'bj-card'} key={idx.toString()} alt='card' src={card.image} />
-          )}
+
+        <h3>Dealer: {!this.state.gameInProgress ? this.state.dealerScore : ''}</h3>
+        {!this.state.gameInProgress ? this.state.dealerHand.map((card, idx) => 
+          <img key={idx.toString()} alt='card' src={card.image} />
+          ) : <img className={'bj-card'} alt='card' src={this.state.dealerHand[0].image} />}
+
       </section>
       <section>
+      
         <h3>Player: {this.state.userScore}</h3>
         {this.state.userHand.map((card, idx) => 
           <img className={'bj-card'} key={idx.toString()} alt='card' src={card.image} />
           )}
+          
       </section>
-      <section>
-        <Alert id="bj-status" variant="warning">Game Status: {this.state.winStatus}</Alert>
-        <Alert id="bj-winnings" variant="success">Winnings: {this.state.winnings}</Alert>
-      </section>
-
-      <Form.Control id="bj-input" type='input' placeholder="Bet Amount" onChange={this.handleBetFieldChange}/>
+      {this.displayWinnings()}
+      <Form.Control id="bj-input" type='input' placeholder="Bet Amount" onChange={this.handleBetFieldChange} />
       <Alert show={this.state.showAlert} variant="danger" onClose={() => this.setState({showAlert: false})} dismissible>
         <Alert.Heading>
             Not Enough Funds
@@ -139,7 +159,6 @@ class Blackjack extends Component {
       <Button onClick={this.blackjackPost} disabled={this.state.gameInProgress}>New Game</Button>
       <Button onClick={this.blackjackPutHit} disabled={!this.state.gameInProgress}>Hit</Button>
       <Button onClick={this.blackjackPutStand} disabled={!this.state.gameInProgress}>Stand</Button>
-
       </ div>
     )
   }
