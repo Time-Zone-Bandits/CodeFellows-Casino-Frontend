@@ -57,13 +57,7 @@ class About extends Component {
               <h2>Mandela Steele-Dadzie</h2>
             </Accordion.Header>
              <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+                Technology and Business professional learning to Code with hopes of gaining gainful employment in 2023! Currently living in Denver, CO, Mandela previously worked at DoorDash and Flexport in the Tech space in a Business Development and Pricing capacity. Following Code Fellows, Mandela is looking forward to making the transition into Product!
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
