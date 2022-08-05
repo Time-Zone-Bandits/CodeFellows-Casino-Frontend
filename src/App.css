@@ -50,6 +50,10 @@
 
 /* Blackjack Component ================================================== */
 
+#blackjackbody {
+  color: white;
+}
+
 #spacer {
   height: 100px;
 }
