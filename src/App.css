@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  height: 135vh;
+  height: 150vh;
   width:100%;
 }
 
@@ -44,50 +44,42 @@
   position: absolute;
   width: 100%;
   bottom: 0;
-  margin-bottom: -300px;
+  margin-bottom: -350px;
   color: rgb(224, 221, 221, 0.733);
 }
 
 /* Blackjack Component ================================================== */
 
-#blackjackbody {
-  color: white;
+.bj-card {
+  height: 175px;
+  margin-left: .5rem;
 }
 
-#spacer {
-  height: 100px;
+h3{
+  color:azure;
 }
 
-.ph-card{
-  margin-left: .75rem;
+#bj-status{
+  width: 20%;
+  margin: 1rem auto ;
 }
 
-.btn-secondary, .btn-success, .btn-danger{
-margin-right: 1rem;
-margin-top: 2rem;
-margin-bottom: 2rem;
+#bj-winnings{
+  width:20%;
+  margin: 1rem auto;
+}
+
+#bj-input{
+  width: 15%;
+  margin: auto;
+  text-align: center;
 }
 
 .btn-primary {
   margin-top: 1.5rem;
   margin-bottom: 5rem;
-}
-
-form{
-  margin: auto;
-  width: 18%;
-}
-
-form .form-control {
-  width: 50%;
-  margin:auto;
-  text-align: center;
-}
-
-.form-label {
-  font-weight: bold;
-  font-size: 20px;
-  padding-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 /* Roulette Component ================================================== */
@@ -153,28 +145,29 @@ margin-right: 5rem;
 #radio0 {
   background-color: rgba(133, 10, 133, 0.884);
   color: white;
+  width: 30%;
+  margin:auto;
 }
 
 #radio1 {
   background-color: rgba(38, 55, 163, 0.884);
   color: white;
+  width: 30%;
+  margin:auto;
 }
 
 #radio2 {
   background-color: rgb(192, 192, 26);
   color: white;
+  width: 30%;
+  margin:auto;
 }
 
 #radio3 {
   background-color: rgba(196, 38, 38, 0.842);
   color: white;
-}
-
-#horse-form {
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.404);
-  border: 3px solid rgba(0, 0, 0, 0.411);
-  border-radius: 10%;
+  width: 30%;
+  margin:auto;
 }
 
 #horse-play-btn {
@@ -182,7 +175,12 @@ margin-right: 5rem;
 }
 
 #horse-win {
-  color: white;
+
+  color: navy;
+  width: 30%;
+  margin: 1rem auto;
+  font-weight: bolder;
+  font-size: 28px;
 }
 
 /* Profile Component ================================================== */

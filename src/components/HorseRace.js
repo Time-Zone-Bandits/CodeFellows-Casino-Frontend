@@ -2,6 +2,8 @@ import { Component } from "react";
 import { Animate } from "react-simple-animate";
 import { withAuth0 } from '@auth0/auth0-react';
 import { Form } from "react-bootstrap";
+import {Button} from 'react-bootstrap';
+import {Alert} from 'react-bootstrap';
 import horseIcon from '../img/horseback.png';
 
 const imgStyle = {
@@ -16,7 +18,8 @@ const buttonStyle = {
     height: 30,
     width: 100,
     fontSize: 15,
-    marginTop: 20
+    marginTop: 10,
+    paddingTop: 3
 };
 
 class HorseRace extends Component {
@@ -84,7 +87,7 @@ class HorseRace extends Component {
             />  
             </div>
           )}
-          <button id="horse-play-btn" type="submit" style={buttonStyle}> Play </button>
+          <Button id="horse-play-btn" type="submit" style={buttonStyle}> Play </Button>
 
           <Animate
               play={this.state.play}
@@ -93,7 +96,7 @@ class HorseRace extends Component {
               start={{opacity: "0"}}
               end={{ opacity: "1" }} 
               >
-              <h2 id="horse-win"> {this.state.winStatus ? 'You Won 60 Chips' : 'You Lost 20 Chips'}</h2>
+              <Alert id="horse-win"> {this.state.winStatus ? 'You Won 60 Chips' : 'You Lost 20 Chips'}</Alert>
             </Animate>
         </Form>
       </>
