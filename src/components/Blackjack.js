@@ -1,7 +1,6 @@
 import {Component} from 'react';
-import BlackjackForm from './BlackjackComponents/BlackjackForm';
-import BlackjackDealer from './BlackjackComponents/BlackjackDealer';
-import BlackjackUser from './BlackjackComponents/BlackjackUser';
+import BlackjackDealer from './BlackjackDealer';
+import BlackjackUser from './BlackjackUser';
 import { withAuth0 } from '@auth0/auth0-react';
 
 
@@ -39,7 +38,6 @@ class Blackjack extends Component {
       <BlackjackDealer/>
       <div id="spacer"></div>
       <BlackjackUser />
-      <BlackjackForm/>
       </>
     )
   }

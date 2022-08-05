@@ -11,6 +11,7 @@ import About from './About';
 import Profile from './components/Profile';
 import PleaseLogin from './components/PleaseLogin';
 import Roulette from './components/Roulette';
+import HorseRace from './components/HorseRace';
 
 import {
   BrowserRouter as Router,
@@ -67,6 +68,10 @@ class App extends Component {
               {this.props.auth0.isAuthenticated ? 
               <Route path="/Roulette" element={<Roulette axios={axios} url={url}/>} /> 
               : <Route path="/Roulette" element={<PleaseLogin/>}/>}
+
+              {this.props.auth0.isAuthenticated ? 
+              <Route path="/HorseRace" element={<HorseRace axios={axios} url={url}/>} /> 
+              : <Route path="/HorseRace" element={<PleaseLogin/>}/>}
               
               <Route path="/About" element={<About/>} />
             </Routes>

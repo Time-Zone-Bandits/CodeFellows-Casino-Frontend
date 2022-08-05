@@ -121,6 +121,21 @@ margin-top: 7rem;
 margin-left: -5rem;
 margin-right: 5rem;
 }
+
+/* Horse Race Component ================================================== */
+
+#horse-path {
+  margin: 2rem;
+  padding: 1rem;
+  background-image: url(./img/grass.jpg);
+  background-size:cover;
+}
+
+#horse-form {
+  padding: 1rem;
+  background-color: aqua;
+}
+
 /* Profile Component ================================================== */
 
 .list-group{

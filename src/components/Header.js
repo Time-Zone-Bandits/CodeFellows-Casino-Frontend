@@ -15,6 +15,7 @@ class Header extends Component {
 
             <Link to="/Blackjack" ><button className="link">Blackjack</button></Link>
             <Link to="/Roulette" ><button className="link">Roulette</button></Link>
+            <Link to="/HorseRace"><button className="link">Horse Race</button></Link>
             <Link to="/Profile" ><button className="link">Profile</button></Link>
             <Link to="/About" ><button className="link">About Us</button></Link>
             <Nav.Link >{<LoginLogout/>}</Nav.Link>
