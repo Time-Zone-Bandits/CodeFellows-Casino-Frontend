@@ -152,7 +152,7 @@ class Blackjack extends Component {
       <Form.Control id="bj-input" type='input' placeholder="Bet Amount" onChange={this.handleBetFieldChange} />
       <Alert show={this.state.showAlert} variant="danger" onClose={() => this.setState({showAlert: false})} dismissible>
         <Alert.Heading>
-            Not Enough Funds
+            Insufficient Funds
         </Alert.Heading>
         Please See Cashier
       </Alert>      
